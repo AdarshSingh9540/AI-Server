@@ -30,7 +30,7 @@ async function chat(prompt) {
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the Gemini Chatbot!');
+  res.send('Welcome to the ai-server! 🙏');
 });
 
 
