@@ -3,7 +3,7 @@ const app = express();
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
-
+const cors = require('cors'); 
 dotenv.config();
 
 const apiKey = process.env.GOOGLE_API_KEY;
@@ -28,7 +28,7 @@ async function chat(prompt) {
 
 
 app.use(bodyParser.json());
-
+app.use(cors());
 app.get('/', (req, res) => {
   res.send('Welcome to the ai-server! 🙏');
 });

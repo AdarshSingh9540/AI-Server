@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- "scripts": {
-  "dev": "node index.js",  
-  "deploy": "npx wrangler publish"
-}
-,
+  "scripts": {
+    "dev": "node index.js",
+    "deploy": "npx wrangler publish"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
