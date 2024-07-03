@@ -15,9 +15,9 @@ if (!apiKey) {
 const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
-async function chat(prompt) {
+async function chat(title) {
   try {
-    const result = await model.generateContent(prompt);
+    const result = await model.generateContent(title);
     const response = await result.response;
     return response.text();
   } catch (error) {
@@ -35,13 +35,13 @@ app.get('/', (req, res) => {
 
 
 app.post('/chat', async (req, res) => {
-  const { prompt } = req.body;
+  const { title } = req.body;
 
-  if (!prompt) {
+  if (!title) {
     return res.status(400).send('Missing prompt in request body');
   }
 
-  const response = await chat(prompt);
+  const response = await chat(title);
   res.json({ response });
 });
 
